@@ -1,0 +1,6 @@
+a = (1,2,3,3,3)
+print(a)
+b = list(a)
+print(b)
+c = set(a)
+print(c)
