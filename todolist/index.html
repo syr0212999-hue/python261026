@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>오늘의 할 일</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="todo-app" aria-labelledby="page-title">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">MY WORKSPACE</p>
+        <h1 id="page-title">오늘의 할 일</h1>
+        <p class="today" id="today-label"></p>
+      </div>
+      <div class="progress-card" aria-label="전체 진행 상황">
+        <strong id="progress-percent">0%</strong>
+        <span>완료</span>
+      </div>
+    </header>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <label class="sr-only" for="todo-input">새 할 일</label>
+      <input id="todo-input" type="text" maxlength="100" placeholder="새 할 일을 입력하세요" aria-describedby="input-error">
+      <button type="submit">추가</button>
+      <p id="input-error" class="input-error" role="alert" aria-live="polite"></p>
+    </form>
+
+    <section class="toolbar" aria-label="할 일 목록 도구">
+      <div class="filters" role="group" aria-label="할 일 필터">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">전체 <span id="count-all">0</span></button>
+        <button class="filter-button" type="button" data-filter="active" aria-pressed="false">진행 중 <span id="count-active">0</span></button>
+        <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">완료됨 <span id="count-completed">0</span></button>
+      </div>
+      <button id="clear-completed" class="clear-button" type="button">완료 항목 삭제</button>
+    </section>
+
+    <section class="todo-list-section" aria-live="polite">
+      <ul id="todo-list" class="todo-list"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">✓</div>
+        <p>등록된 할 일이 없습니다.</p>
+        <span>위 입력창에서 새로운 할 일을 추가해 보세요.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
